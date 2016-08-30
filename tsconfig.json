@@ -5,12 +5,17 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
+  "files": [
+    "typings/index.d.ts",
+    "node_modules/zone.js/dist/zone.js.d.ts"
+  ],
   "filesGlob": [
     "**/*.ts",
     "!node_modules/**/*"
   ],
   "exclude": [
     "node_modules",
+    "www",
     "typings/global",
     "typings/global.d.ts"
   ],
