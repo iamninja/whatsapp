@@ -1,8 +1,17 @@
-import {Component} from '@angular/core';
-import {Platform, ionicBootstrap} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
-import {TabsPage} from './pages/tabs/tabs';
+import 'meteor-client-side';
 
+import { Component } from '@angular/core';
+import { Platform, ionicBootstrap } from 'ionic-angular';
+import { StatusBar } from 'ionic-native';
+import { METEOR_PROVIDERS } from 'angular2-meteor';
+import * as Check from 'meteor/check';
+import * as EJSON from 'meteor/ejson';
+import { TabsPage } from './pages/tabs/tabs';
+
+Object.assign(window,
+  Check,
+  EJSON
+);
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
@@ -22,4 +31,4 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [METEOR_PROVIDERS]);
